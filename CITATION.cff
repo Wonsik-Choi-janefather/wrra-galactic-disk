@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the paper below."
+title: "WRRA Spatial Twist Selection of Galactic Disk Planes and the Dark Mass Phenotype"
+type: article
+authors:
+  - family-names: Choi
+    given-names: Wonsik
+    email: janefather@gmail.com
+version: 1.0
+date-released: 2026-09-28
+abstract: >-
+  A quantitative WRRA toy model separating the twist field that selects an
+  unoriented galactic disk plane from angular momentum, while treating the
+  magnitude sector of the same twist state as spatial stress producing an
+  effective dark-mass phenotype.
+repository-code: "https://github.com/Wonsik-Choi-janefather/wrra-galactic-disk"
+preferred-citation:
+  type: article
+  title: "WRRA Spatial Twist Selection of Galactic Disk Planes and the Dark Mass Phenotype: A Dual Output Model of the Milky Way Warp and Rotation Curve"
+  authors:
+    - family-names: Choi
+      given-names: Wonsik
+  year: 2026
