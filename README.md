@@ -17,6 +17,11 @@ The directional sector of the twist state selects an **unoriented local plane**�
 | English | [WRRA_Galactic_Disk_EN.pdf](papers/WRRA_Galactic_Disk_EN.pdf) | [WRRA_Galactic_Disk_EN.docx](papers/WRRA_Galactic_Disk_EN.docx) |
 | 한국어 | [WRRA_Galactic_Disk_KO.pdf](papers/WRRA_Galactic_Disk_KO.pdf) | [WRRA_Galactic_Disk_KO.docx](papers/WRRA_Galactic_Disk_KO.docx) |
 
+## Archival record
+
+- Preprint DOI: <https://doi.org/10.5281/zenodo.23003875>
+- Upstream accumulated-twist cosmology: <https://github.com/Wonsik-Choi-janefather/wrra-finite-boundaryless-twist-cosmology>
+
 ## Evaluation structure
 
 ### 1. Validation inputs
