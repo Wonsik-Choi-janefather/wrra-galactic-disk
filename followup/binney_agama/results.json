@@ -1,0 +1,37 @@
+{
+  "status": "numerical_interface_checks_only_no_observational_validation",
+  "closure": "spherical_equivalent_twist_only_not_disk_total_potential",
+  "units": {
+    "length": "kpc",
+    "velocity": "km/s",
+    "mass": "Msun",
+    "density": "Msun/kpc^3"
+  },
+  "a_T_m_s2": 1.191812669e-10,
+  "potential_gauge": "Phi_T(25 kpc)=0; not an escape-energy normalization",
+  "poisson_max_relative_errors_by_step_kpc": {
+    "0.01": 1.0160355742305782e-06,
+    "0.005": 2.5322129293403606e-07,
+    "0.002": 2.3258876868936795e-07
+  },
+  "force_gradient_max_relative_error": 1.5129123509538545e-09,
+  "mass_density_max_relative_error": 4.440892098500626e-16,
+  "independent_plummer_poisson_max_relative_error": 5.315007499118174e-06,
+  "positive_density_on_80_sample_points": true,
+  "outside_domain_rejected": true,
+  "original_total_vc_km_s": {
+    "8.2": 226.34139943004342,
+    "25.0": 201.58894151576763
+  },
+  "agama": {
+    "executed": false
+  },
+  "not_executed": [
+    "3D baryonic finite-thickness potential",
+    "q_T constitutive closure",
+    "self-consistent DF iteration",
+    "Gaia RVS comparison",
+    "stellar counts",
+    "warp dynamics"
+  ]
+}
