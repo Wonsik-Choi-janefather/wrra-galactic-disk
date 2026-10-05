@@ -173,3 +173,22 @@ API inspected at commit `f302756b8af2b763db58e278e30478517dc8eea3`.
 Future archival editions should cite [1–3] and carry this acknowledgement as
 methodological advice. This repository addendum does not modify an existing
 Zenodo version or claim a new Zenodo publication.
+
+## v1.1 SciPy fallback (executed)
+
+Run `python followup/binney_agama/fallback_vertical.py`. At fixed R=8.2 kpc,
+this solves the auxiliary local 1D Hamiltonian of the same spherical twist
+field, computes its J_z, integrates orbits and evaluates finite-support tracer
+DF moments. It holds R fixed and omits radial coupling and baryonic vertical
+force; this J_z is not a full 3D Galactic action. Both demonstration DFs use
+the same field. The energy cutoff at 2 kpc is a diagnostic boundary assumption.
+The action-period identity, orbit energy conservation, PDF normalization and
+local vertical Jeans identity pass. See `fallback_results.json` and the
+four-page addendum in `papers/WRRA_Galactic_Disk_v1_1_EN.pdf` (followed by the
+unchanged original twelve-page manuscript). Full AGAMA self-consistency and
+observational comparison remain unexecuted.
+
+During v1.1 preparation the Zenodo record was accessible through its signed-in
+UI. Its published v1.0 MD5, `1ec9da6fbe2daaed27aee94cc0da3afd`, matches the
+repository English PDF. The earlier access limitation above applies to the
+initial search-tool attempt, not to this later successful inspection.

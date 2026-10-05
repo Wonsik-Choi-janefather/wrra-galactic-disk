@@ -1,0 +1,120 @@
+{
+  "status": "executed_local_1D_twist_only_diagnostic_no_observational_validation",
+  "solver": "SciPy quadrature, root finding and solve_ivp",
+  "R_kpc": 8.2,
+  "energy_cutoff_at_z_kpc": 2.0,
+  "Ecut_km2_s2": 522.7022999235651,
+  "boundary": "DF has compact energy support; cutoff is diagnostic assumption, not observed disk edge",
+  "unchanged_field_between_DFs": true,
+  "orbit_action_checks": [
+    {
+      "zmax_kpc": 0.1,
+      "E_km2_s2": 1.3313875569829179,
+      "Jz_kpc_km_s": 0.08158957329611571,
+      "period_kpc_per_km_s": 0.38505059397332736,
+      "dJdE_period_relative_error": 1.8344169516737452e-09,
+      "four_period_energy_relative_drift": 1.2329606224881218e-09
+    },
+    {
+      "zmax_kpc": 0.3,
+      "E_km2_s2": 11.97792224353725,
+      "Jz_kpc_km_s": 0.7341312744058042,
+      "period_kpc_per_km_s": 0.38516066698336765,
+      "dJdE_period_relative_error": 3.1378455389585724e-11,
+      "four_period_energy_relative_drift": 8.367135873044163e-10
+    },
+    {
+      "zmax_kpc": 0.7,
+      "E_km2_s2": 65.08925816342526,
+      "Jz_kpc_km_s": 3.992190192521073,
+      "period_kpc_per_km_s": 0.3857102142022732,
+      "dJdE_period_relative_error": 1.270290539423513e-10,
+      "four_period_energy_relative_drift": 7.070525276375861e-10
+    },
+    {
+      "zmax_kpc": 1.0,
+      "E_km2_s2": 132.5149317263049,
+      "Jz_kpc_km_s": 8.135044290876362,
+      "period_kpc_per_km_s": 0.3864089291479767,
+      "dJdE_period_relative_error": 3.168010298537638e-11,
+      "four_period_energy_relative_drift": 6.804705687812884e-10
+    },
+    {
+      "zmax_kpc": 1.5,
+      "E_km2_s2": 296.41361796815545,
+      "Jz_kpc_km_s": 18.236833305819733,
+      "period_kpc_per_km_s": 0.388112334816747,
+      "dJdE_period_relative_error": 1.872679789016729e-11,
+      "four_period_energy_relative_drift": 6.678821939942736e-10
+    }
+  ],
+  "tracer_DFs": [
+    {
+      "input_sigma_km_s": 10.0,
+      "vertical_Jeans_relative_error_at_z_0_5": 1.0416568940740945e-08,
+      "profile": [
+        {
+          "z_kpc": 0.0,
+          "relative_tracer_density": 1.0,
+          "sigma_vz_km_s": 9.930412609719253,
+          "velocity_pdf_integral": 1.0000000000000002
+        },
+        {
+          "z_kpc": 0.3,
+          "relative_tracer_density": 0.8869656258299577,
+          "sigma_vz_km_s": 9.922417440554991,
+          "velocity_pdf_integral": 1.0
+        },
+        {
+          "z_kpc": 0.7,
+          "relative_tracer_density": 0.5209218642118797,
+          "sigma_vz_km_s": 9.874658011611013,
+          "velocity_pdf_integral": 1.0000000000000002
+        },
+        {
+          "z_kpc": 1.0,
+          "relative_tracer_density": 0.2647015813447841,
+          "sigma_vz_km_s": 9.771034362334959,
+          "velocity_pdf_integral": 1.0
+        }
+      ]
+    },
+    {
+      "input_sigma_km_s": 20.0,
+      "vertical_Jeans_relative_error_at_z_0_5": 3.785080471274682e-09,
+      "profile": [
+        {
+          "z_kpc": 0.0,
+          "relative_tracer_density": 1.0,
+          "sigma_vz_km_s": 15.61345155138612,
+          "velocity_pdf_integral": 0.9999999999999999
+        },
+        {
+          "z_kpc": 0.3,
+          "relative_tracer_density": 0.9660649509806335,
+          "sigma_vz_km_s": 15.496962457243376,
+          "velocity_pdf_integral": 1.0000000000000002
+        },
+        {
+          "z_kpc": 0.7,
+          "relative_tracer_density": 0.8266185036345484,
+          "sigma_vz_km_s": 14.938903829797631,
+          "velocity_pdf_integral": 0.9999999999999996
+        },
+        {
+          "z_kpc": 1.0,
+          "relative_tracer_density": 0.6726008297553807,
+          "sigma_vz_km_s": 14.118320580313101,
+          "velocity_pdf_integral": 0.9999999999999999
+        }
+      ]
+    }
+  ],
+  "not_claimed": [
+    "full AGAMA equivalence",
+    "full 3D actions",
+    "baryonic vertical force",
+    "self-consistent disk",
+    "Gaia fit"
+  ]
+}
