@@ -67,7 +67,23 @@ The hypothesis is weakened or falsified if, after the rotation sector fixes the 
 
 The calculation closes a first quantitative toy model in which disk geometry and additional gravity are distinct outputs of one WRRA twist state. It does **not** yet establish the physical origin of the twist field. In particular, the anisotropic constitutive relation for `q_T`, the vertical-frequency calculation, a covariant action, and joint kinematic/lensing tests remain open.
 
-## Reproduction
+## Follow-up: James Binney's methodological suggestion (2026-10-05)
+
+See the [Binney-inspired AGAMA follow-up addendum](followup/binney_agama/README.md)
+and [한국어 검토·계획](followup/binney_agama/REVIEW_KO.md) for the inspection,
+calibration ledger, references, acknowledgement and minimal executable interface.
+Binney's *Distribution functions for the Milky Way* (2010),
+<https://doi.org/10.1111/j.1365-2966.2009.15845.x>, supplies the scholarly connection
+to the planned vertical-action DF test. We thank him for methodological advice;
+he is not listed as a coauthor and no endorsement or completed observational
+validation is implied. The correspondence summary is author-reported.
+
+The parent release is preserved. The new bounded spherical-equivalent twist
+diagnostic checks potential, force and effective density consistency; it does
+not close the 3D disk or fit Gaia data. Executed checks are recorded in
+[results.json](followup/binney_agama/results.json).
+
+## Original v1.0 reproduction
 
 Python 3.11 or later is recommended.
 
