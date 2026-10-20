@@ -1,0 +1,11 @@
+{
+  "archive": "ESA Gaia Archive",
+  "table": "gaiadr3.gaia_source",
+  "retrieved_utc": "2026-10-20T09:02:53.125368+00:00",
+  "query": "SELECT source_id,ra,dec,parallax,pmra,pmdec,radial_velocity,radial_velocity_error,\nSIN(RADIANS(b))/parallax+0.0208 AS z_kpc,phot_g_mean_mag,bp_rp\nFROM gaiadr3.gaia_source\nWHERE parallax BETWEEN 0.95 AND 12.5\nAND parallax_over_error>10\nAND ruwe<1.4\nAND phot_g_mean_mag BETWEEN 7 AND 17\nAND bp_rp BETWEEN 1.0 AND 1.4\nAND phot_g_mean_mag+5*LOG10(parallax)-10 BETWEEN 5 AND 6\nAND COS(RADIANS(b))/parallax<0.25\nAND SIN(RADIANS(b))/parallax+0.0208 BETWEEN -1 AND 1\nAND ABS(SIN(RADIANS(b))/parallax+0.0208)>0.1\n",
+  "sha256": "4c73a542f64e2f35fe74df2f6de66775cefa6e258941ca6003ca8712b0678965",
+  "size_bytes": 15336009,
+  "rows": 90113,
+  "MAXREC": 1000000,
+  "selection_status": "explicit sample; completeness, extinction and population mapping not fully modelled"
+}

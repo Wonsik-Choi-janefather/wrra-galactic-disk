@@ -1,0 +1,17 @@
+name,value,limit,pass_
+initial reconstructed residual force versus prescribed rule,1.492490784993361e-05,5e-05,True
+regulator local force core=0.005 outer=200,1.0969592205700707e-05,0.0001,True
+regulator local force core=0.02 outer=200,4.118302696576315e-05,0.0001,True
+regulator local force core=0.01 outer=100,2.3838375717843974e-11,0.0001,True
+regulator local force core=0.01 outer=400,2.6222801707831422e-11,0.0001,True
+two successive coupled fixed-point iterations below 0.2 percent,0.00018252601186563577,0.002,True
+residual positive sampled density,967535.1371508542,0.0,True
+DF moments versus final SCM density interpolation max relative,0.017454096346782855,0.05,True
+orbit 0 energy conservation,8.134938648148596e-10,1e-06,True
+orbit 0 angular momentum conservation,1.088173995356101e-11,1e-07,True
+orbit 1 energy conservation,6.43541314357271e-09,1e-06,True
+orbit 1 angular momentum conservation,2.0078649853871866e-10,1e-07,True
+orbit 2 energy conservation,3.979058757385199e-09,1e-06,True
+orbit 2 angular momentum conservation,4.661178110154651e-10,1e-07,True
+orbit 3 energy conservation,1.718050598531205e-09,1e-06,True
+orbit 3 angular momentum conservation,8.619278624166782e-10,1e-07,True

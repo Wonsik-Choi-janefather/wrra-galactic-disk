@@ -1,0 +1,72 @@
+diff --git a/src/interface_python.cpp b/src/interface_python.cpp
+index a1ce355..60de1db 100644
+--- a/src/interface_python.cpp
++++ b/src/interface_python.cpp
+@@ -4950,6 +4950,8 @@ class FncGalaxyModelMoments: public BatchFunction {
+     unsigned int numComponents;                   // df.numValues() if separate, otherwise 1
+     std::vector<double> alpha, beta, gamma;       // conversion between observed and intrinsic coords
+     double *outputDens, *outputVel, *outputVel2;  // raw buffers for output values
++    double requestedRelError;
++    int requestedMaxNumEval;
+ public:
+     FncGalaxyModelMoments(PyObject* input, PyObject* namedArgs, GalaxyModelObject* model_obj) :
+         BatchFunction(input, /*inputLength - two possible choices*/ 2, 3,
+@@ -4962,6 +4964,12 @@ public:
+         bool needDens = toBool(nargs.pop("dens"), true);
+         bool needVel  = toBool(nargs.pop("vel" ), false);
+         bool needVel2 = toBool(nargs.pop("vel2"), true);
++        requestedRelError = toDouble(nargs.pop("relError"), 1e-3);
++        requestedMaxNumEval = toInt(nargs.pop("maxNumEval"), 100000);
++        if(!(requestedRelError > 0) || requestedMaxNumEval <= 0) {
++            PyErr_SetString(PyExc_ValueError, "Positive relError and maxNumEval required");
++            return;
++        }
+         separate      = toBool(nargs.pop("separate"), false);
+         numComponents = separate ? model.distrFunc.numValues() : 1;
+         alpha = nargs.popArray("alpha", numPoints);
+@@ -5025,11 +5033,11 @@ public:
+                     inputBuffer[ip * inputLength    ] * conv->lengthUnit,
+                     inputBuffer[ip * inputLength + 1] * conv->lengthUnit),
+                     dens, (coord::VelCar*)vel, (coord::Vel2Car*)vel2,
+-                    separate, orientation);
++                    separate, orientation, requestedRelError, requestedMaxNumEval);
+             else // inputLength==3
+                 computeMoments(model, convertPos(&inputBuffer[ip * inputLength]),
+                     dens, (coord::VelCar*)vel, (coord::Vel2Car*)vel2,
+-                    separate, orientation);
++                    separate, orientation, requestedRelError, requestedMaxNumEval);
+             // convert units in the output arrays
+             for(unsigned int ic=0; ic<numComponents; ic++) {
+                 if(dens)
+@@ -5561,6 +5569,12 @@ int Component_init(ComponentObject* self, PyObject* args, PyObject* namedArgs)
+ 
+     // check if a 'disklike' flag was provided
+     int disklike = toBool(nargs.pop("disklike"), -1);
++    double requestedRelError = toDouble(nargs.pop("relError"), 1e-3);
++    int requestedMaxNumEval = toInt(nargs.pop("maxNumEval"), 100000);
++    if(!(requestedRelError > 0) || requestedMaxNumEval <= 0) {
++        PyErr_SetString(PyExc_ValueError, "Positive relError and maxNumEval required");
++        return -1;
++    }
+ 
+     // choose the variant of component: static or DF-based
+     if((pot_obj!=NULL && df_obj!=NULL) || (pot_obj==NULL && df_obj==NULL && dens_obj==NULL)) {
+@@ -5609,7 +5623,7 @@ int Component_init(ComponentObject* self, PyObject* args, PyObject* namedArgs)
+         }
+         try {
+             self->comp.reset(new galaxymodel::ComponentWithSpheroidalDF(
+-                df, dens, lmax, mmax, gridSize, rmin, rmax));
++                df, dens, lmax, mmax, gridSize, rmin, rmax, requestedRelError, requestedMaxNumEval));
+             self->name = "Spheroidal component";
+             FILTERMSG(utils::VL_DEBUG, "Agama", "Created a " + std::string(self->name) + " at "+
+                 utils::toString(self->comp.get()));
+@@ -5637,7 +5651,8 @@ int Component_init(ComponentObject* self, PyObject* args, PyObject* namedArgs)
+         }
+         try {
+             self->comp.reset(new galaxymodel::ComponentWithDisklikeDF(
+-                df, dens, mmax, gridSizeR, Rmin, Rmax, gridSizez, zmin, zmax));
++                df, dens, mmax, gridSizeR, Rmin, Rmax, gridSizez, zmin, zmax,
++                requestedRelError, requestedMaxNumEval));
+             self->name = "Disklike component";
+             FILTERMSG(utils::VL_DEBUG, "Agama", "Created a " + std::string(self->name) + " at "+
+                 utils::toString(self->comp.get()));

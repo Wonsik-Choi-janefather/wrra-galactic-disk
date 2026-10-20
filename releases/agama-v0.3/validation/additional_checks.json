@@ -1,0 +1,5 @@
+{
+  "ICRS_Galactic_coordinate_max_error_kpc": 3.3306690738754696e-16,
+  "total_midplane_density_grid_change": 0.00034372510372238096,
+  "total_midplane_density_grid_gate_1percent": true
+}

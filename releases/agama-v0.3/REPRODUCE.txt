@@ -1,0 +1,22 @@
+REPRODUCTION
+Python 3.12.14; numpy 2.3.5; scipy 1.17.0; matplotlib; pypdf; reportlab.
+Build AGAMA from source commit f302756b8af2b763db58e278e30478517dc8eea3.
+In that source directory apply agama_precision_controls.patch with git apply, then rebuild agama.so. The patch only exposes already-existing native relative-error and evaluation-budget controls in the Python interface. Physical formulae and default settings are unchanged.
+Make the resulting agama module importable, following official AGAMA build instructions. The archived run used GSL 2.7.1, 4 OpenMP threads and no optional Eigen/CVXOPT/UNSIO.
+
+From this package directory, using the saved warm_start inputs:
+  OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=1 python run_agama.py
+  OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=1 python run_agama.py --refined
+  OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=1 python validate_models.py
+  OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=1 python compare_observations.py
+The precomputed public Gaia catalogue is included. To refresh it, run python fetch_gaia.py; this is a NEW retrieval, so preserve the existing query metadata/checksums if comparing releases.
+The small additional_checks.json records a separate coordinate-frame and total-density refinement check; its numbers can be recomputed from validation/summary.json and the raw Gaia coordinates.
+To rebuild the English PDF: python build_report.py --output-dir reports
+To load a precomputed potential without rerunning:
+  from model import load_final_potential
+  p=load_final_potential('results_refined')
+The analytic gas and bulge are reconstructed from explicit parameters; the residual Multipole and stellar CylSpline are reloaded. AGAMA's incomplete raw composite export is deliberately not offered as a standalone model file.
+
+CLAIM BOUNDARY
+Both numerical resolutions satisfy the chosen local convergence criterion. Full population/selection-corrected Gaia star-count and velocity validation has NOT passed. Do not describe the geometry-only count-template fit, a symmetry residual, or another cosmology calculation's residual as such a validation.
+Public research release. Private correspondence and reply drafts are excluded.

@@ -1,0 +1,33 @@
+{
+  "max_force_change_refined_vs_base": 0.0005153983875139047,
+  "max_vc_change_refined_vs_base": 0.0002675484010881135,
+  "force_refinement_gate_1percent": true,
+  "rotation_refinement_gate_half_percent": true,
+  "observation_fit_performed": false,
+  "base": {
+    "vc_solar_kms": 215.56531771123892,
+    "Kz11_equivalent_Msun_pc2": 71.82974483104766,
+    "true_column_11_Msun_pc2": 79.31428114072,
+    "midplane_total_density_Msun_pc3": 0.07904431432243558,
+    "export_reload_rotation_relative_error": 1.1494138973944246e-12
+  },
+  "refined": {
+    "vc_solar_kms": 215.6208902022171,
+    "Kz11_equivalent_Msun_pc2": 71.83659477886654,
+    "true_column_11_Msun_pc2": 79.31056071980461,
+    "midplane_total_density_Msun_pc3": 0.07907149317963023,
+    "export_reload_rotation_relative_error": 2.3161472739730016e-12
+  },
+  "initial_true_column_11_Msun_pc2": 73.66385575114737,
+  "linearized_rotation_target_diagnostic": {
+    "target": "229-1.7*(R-8.2) km/s; original linearized Eilers reference, not data likelihood",
+    "range_kpc": [
+      8.25,
+      25
+    ],
+    "base_RMS_kms": 5.199566365206924,
+    "refined_RMS_kms": 5.1768160864927335
+  },
+  "jeans_max_relative_residual": 0.021889749851880188,
+  "Jeans_note": "Staeckel approximate actions and finite-difference cubature diagnostic; no exact collisionless equilibrium claim."
+}

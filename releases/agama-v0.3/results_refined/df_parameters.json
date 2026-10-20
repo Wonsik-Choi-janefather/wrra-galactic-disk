@@ -1,0 +1,24 @@
+[
+  {
+    "component": "thin",
+    "type": "QuasiIsothermal",
+    "mass": 35661336806.37797,
+    "Rdisk": 2.53,
+    "Hdisk": 0.3,
+    "sigmar0": 176.95605433842024,
+    "Rsigmar": 5.06,
+    "sigmamin": 5.0,
+    "Jmin": 10.0
+  },
+  {
+    "component": "thick",
+    "type": "QuasiIsothermal",
+    "mass": 11248180202.397762,
+    "Rdisk": 3.38,
+    "Hdisk": 0.9,
+    "sigmar0": 184.99909565439606,
+    "Rsigmar": 6.76,
+    "sigmamin": 5.0,
+    "Jmin": 10.0
+  }
+]

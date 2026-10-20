@@ -1,0 +1,105 @@
+{
+  "version": "0.3",
+  "run": "base",
+  "agama_version": "1.0.161 compiled on Oct 20 2026",
+  "G": 4.30091727067736e-06,
+  "converged": true,
+  "iterations": 5,
+  "last_iteration": {
+    "iteration": 5,
+    "seconds": 37.150190591812134,
+    "force_change": 7.083279309156016e-05,
+    "stellar_density_change": 0.00018252601186563577,
+    "residual_update_change": 1.650751618820223e-05,
+    "vc_solar_kms": 215.56531771113865,
+    "Kz11_equiv_Msun_pc2": 71.82974483104334,
+    "stellar_density_solar_Msun_pc3": 0.0358638160060894
+  },
+  "checks_passed": 16,
+  "checks_total": 16,
+  "initial_vc_solar": 222.160422828007,
+  "initial_Kz11_equiv": 72.29109489054584,
+  "initial_residual_rho_solar": 0.008376134130053193,
+  "initial_stellar_midplane_rho": 0.06550823065238395,
+  "final_residual_rho_solar": 0.008479173184043651,
+  "fixed_df_parameters": [
+    {
+      "component": "thin",
+      "type": "QuasiIsothermal",
+      "mass": 35661336806.37797,
+      "Rdisk": 2.53,
+      "Hdisk": 0.3,
+      "sigmar0": 176.95605433842024,
+      "Rsigmar": 5.06,
+      "sigmamin": 5.0,
+      "Jmin": 10.0
+    },
+    {
+      "component": "thick",
+      "type": "QuasiIsothermal",
+      "mass": 11248180202.397762,
+      "Rdisk": 3.38,
+      "Hdisk": 0.9,
+      "sigmar0": 184.99909565439606,
+      "Rsigmar": 6.76,
+      "sigmamin": 5.0,
+      "Jmin": 10.0
+    }
+  ],
+  "orbit_metrics": [
+    {
+      "orbit": 0,
+      "R_initial_kpc": 5,
+      "time_internal": 1.617549337892335,
+      "periods": 10,
+      "energy_error_scaled": 8.134938648148596e-10,
+      "Lz_relative_error": 1.088173995356101e-11,
+      "Jr_relative_range": 0.0009477531889565457,
+      "Jz_relative_range": 0.00039063317457479476,
+      "Jphi_relative_range": 7.045308732061491e-12,
+      "zmax_kpc": 0.12083108354781262
+    },
+    {
+      "orbit": 1,
+      "R_initial_kpc": 8.2,
+      "time_internal": 2.3900931776007286,
+      "periods": 10,
+      "energy_error_scaled": 6.43541314357271e-09,
+      "Lz_relative_error": 2.0078649853871866e-10,
+      "Jr_relative_range": 0.008315627356978562,
+      "Jz_relative_range": 0.0024289576415198262,
+      "Jphi_relative_range": 2.098883275892531e-10,
+      "zmax_kpc": 0.37641139889468855
+    },
+    {
+      "orbit": 2,
+      "R_initial_kpc": 12,
+      "time_internal": 3.4727263085366773,
+      "periods": 10,
+      "energy_error_scaled": 3.979058757385199e-09,
+      "Lz_relative_error": 4.661178110154651e-10,
+      "Jr_relative_range": 0.026202414565768585,
+      "Jz_relative_range": 0.005810323280968822,
+      "Jphi_relative_range": 5.956896153376149e-10,
+      "zmax_kpc": 1.111958849833879
+    },
+    {
+      "orbit": 3,
+      "R_initial_kpc": 20,
+      "time_internal": 6.107210102548555,
+      "periods": 10,
+      "energy_error_scaled": 1.718050598531205e-09,
+      "Lz_relative_error": 8.619278624166782e-10,
+      "Jr_relative_range": 0.03184794441508224,
+      "Jz_relative_range": 0.011159673877161245,
+      "Jphi_relative_range": 1.1294820004084047e-10,
+      "zmax_kpc": 1.6317851681961917
+    }
+  ],
+  "stage": "precision-controlled coupled DF-Poisson and spherical WRRA response; warm-started from v0.2",
+  "DF_density_relError": 0.0001,
+  "DF_density_maxNumEval": 1000000,
+  "vertical_potential_grid_min_kpc": 0.08,
+  "observational_likelihood_run": false,
+  "python": "3.12.14"
+}

@@ -10,6 +10,10 @@ This repository contains the Korean and English editions of a WRRA model for the
 
 The directional sector of the twist state selects an **unoriented local plane**—the normals **n** and **−n** represent the same plane—without introducing a prior global “up” or “down.” Angular momentum remains a separate physical quantity that maintains rotation in the selected plane. A magnitude sector of the same state is modeled as spatial stress and appears gravitationally as an effective dark-mass phenotype.
 
+## AGAMA follow-up — 20 October 2026
+
+[WRRA AGAMA bridge v0.3](releases/agama-v0.3/README.md) adds actual finite-thickness action-based iterations, two-resolution numerical checks and explicit Gaia DR3/DR2 comparisons. Both resolutions meet the local convergence criterion. The current tracer template does not reproduce the selected height counts; full selection/population-corrected joint validation remains open. The fixed response law is retained while the field evolves. This follow-up supersedes earlier implementation-status statements, not the original manuscript.
+
 ## Papers
 
 | Language | PDF | Editable DOCX |

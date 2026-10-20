@@ -1,0 +1,9 @@
+{
+  "default_moment_controls_preserved": true,
+  "tight_Plummer_density_relative_error": -3.23073144681274e-07,
+  "physics_formulae_changed": false,
+  "controls_exposed": [
+    "relError",
+    "maxNumEval"
+  ]
+}

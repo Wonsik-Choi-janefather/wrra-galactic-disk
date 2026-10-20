@@ -1,0 +1,135 @@
+Wonsik Choi | WRRA-AGAMA v0.3-dev | 20 October 2026
+1
+WRRA-AGAMA v0.3
+Numerical closure and a first Gaia sample comparison
+Wonsik Choi | Independent researcher, Seoul | 20 October 2026
+Scope: actual stellar distribution-function and Poisson iteration, followed by public Gaia comparisons.
+Numerical convergence is demonstrated at two resolutions. Full joint star-count and velocity validation is not
+yet established.
+Assessment stage
+What was actually calculated
+Validation inputs
+Original Galactic-disk masses and radial scales; literature finite heights; explicit, fixed trial
+stellar DFs. A direct Gaia DR3 sample is used for a subsequent comparison.
+WRRA transformation
+At each baryonic state, apply the prescribed WRRA residual response; reconstruct its spherical
+effective density and potential; update the live stellar f(J) and repeat.
+Outputs
+Converged forces and local densities at two resolutions; orbit and Jeans diagnostics; actual
+selected Gaia star counts and vertical velocities.
+Falsification
+conditions
+Non-positive source, non-convergence, grid sensitivity, invariant violation, or disagreement with
+properly matched observational tracers and selection.
+Fixed physical specification; improved numerical controls
+The scale a_T = 1.191812669 x 10^-10 m/s^2 and the original constitutive response are retained. Gas and
+bulge are static; two stellar QuasiIsothermal DFs are live. Initial stellar heights are 0.3/0.9 kpc; gas
+sech-squared scale parameters are 0.085/0.045 kpc. The trial radial-dispersion amplitudes are 35/55 km/s at
+8.2 kpc. These DF choices are explicit model inputs, not new measurements or microscopic derivations. The
+spatial residual closure is spherical.
+The Python interface was extended to expose AGAMA's existing internal integration controls; the physical formulae were
+unchanged. Density integration uses relative tolerance 10^-4 and up to 10^6 evaluations. The stellar potential grid begins at
+z = 0.08 kpc. Both runs start from the stored v0.2 density and perform five additional iterations, satisfying the 0.2% local
+criterion twice consecutively. The patch and warm-start inputs are included.
+At R = 8.2 kpc
+Base grid
+Refined grid
+Additional warm-start iterations / checks
+5 / 16 of 16
+5 / 16 of 16
+Circular speed [km/s]
+215.56532
+215.62089
+Kz(1.1 kpc)/(2 pi G) [Msun/pc^2]
+71.82974
+71.83659
+True column within |z| = 1.1 kpc [Msun/pc^2]
+79.31428
+79.31056
+Total midplane Poisson density [Msun/pc^3]
+0.0790443
+0.0790715
+Kz/(2 pi G) is a force-equivalent surface density; it is not the integrated mass column. Their difference retains the radial term
+of the cylindrical Poisson equation. Displayed digits support reproduction and do not represent observational accuracy.
+
+
+Wonsik Choi | WRRA-AGAMA v0.3-dev | 20 October 2026
+2
+Numerical checks and actual Gaia data
+Across the two grids, the maximum force difference on 20 probes is 0.0515%; circular speeds differ by at
+most 0.0268% over 5-25 kpc. Total midplane density differs by 0.0344%, resolving the earlier numerical
+sensitivity. Four test orbits each cover ten nominal periods and pass energy and axial-angular-momentum
+checks. A sampled direct-moment Jeans residual is at most 2.19%; approximate actions are not exact
+invariants.
+ESA Gaia DR3 sample
+Retrieved / compared
+Explicit archive selection
+Cylinder radius 0.25 kpc; G = 7-17; BP-RP = 1.0-1.4; uncorrected absolute G =
+5-6; parallax S/N above 10; RUWE below 1.4.
+Retrieved stars / with radial velocities
+90,113 / 72,603
+RV uncertainty below 3 km/s
+48,794 stars
+Count comparison
+79,716 stars in 17 paired height bins, |z| = 0.15-1.0 kpc. Two global tracer
+weights fitted; no gravity refit or per-bin adjustment.
+Upper panels: directly retrieved Gaia DR3 counts and raw sample asymmetry. The geometry-only fixed-DF count template
+does not fit the selected counts; its Poisson deviance is 1747.2 after two global weights. Lower panels: independent
+author-released Gaia DR2 perturbation tables from Bennett & Bovy. These comparisons use different selections and are not
+combined into a joint likelihood.
+
+
+Wonsik Choi | WRRA-AGAMA v0.3-dev | 20 October 2026
+3
+Interpretation and review boundary
+Claim
+Supported status
+Actual potential-density/AGAMA
+implementation
+Yes. The prescribed WRRA response, density inversion, stellar DF and Poisson
+iteration are executed.
+Density convergence at both tested
+resolutions
+Yes, on the stated probes and numerical tests. No continuum or global
+theorem is claimed.
+An unchanged frozen field during
+iteration
+No. The field evolves; the response law and DF parameters remain fixed.
+Zero added physical assumptions
+No. Finite thickness, trial DFs, spherical closure and global boundary
+regularization are explicitly adopted.
+Star counts and vertical velocities fully
+validated
+No. The selected count profile is not reproduced by the current template, full
+selection/population mapping is open, and vertical perturbations are absent
+from this equilibrium background.
+What the observational comparison establishes
+Mass density is not itself a star count. The current geometry-only conversion fits two global population
+weights but does not forward-model extinction, luminosity-colour distributions, RUWE cuts or the full Gaia/RVS
+completeness. Its count-profile discrepancy cannot yet be assigned uniquely to gravity. A population-matched
+tracer DF and a verified selection function are required.
+The reflected equilibrium background predicts zero North-South asymmetry and zero vertical streaming. The
+published DR2 table contains count asymmetries reaching 9.92%. Diagonal residual sums are 1692.2 for 31
+count-asymmetry bins and 437.0 for 50 velocity bins after one global velocity offset. Covariance is not
+supplied, so no formal joint significance is claimed. The same limitation applies to a conventional reflected
+equilibrium control. This is a missing perturbation sector, not a unique test of WRRA against standard gravity.
+The initial finite-height circular speed is 222.16 km/s; the coupled result is about 215.62 km/s. The live stellar
+DF changes the initially specified spatial density. The old linearized rotation reference has RMS difference
+about 5.18 km/s over 8.25-25 kpc; it is not an individual-data likelihood.
+Concrete next steps
+1. Forward-model the selected stellar populations and Gaia/RVS selection, then calibrate the tracer DF against
+density and dispersion data.
+2. Test a fixed calibrated model on held-out observables.
+3. Add and test a physically specified non-equilibrium sector if the goal includes the measured vertical waves.
+Calibration to verified observations is legitimate; it must remain explicit.
+Sources and reproduction
+AGAMA source: GalacticDynamics-Oxford/Agama, commit f302756b8af2b763db58e278e30478517dc8eea3, plus the included
+precision-control interface patch.
+WRRA radial model: Wonsik-Choi-janefather/wrra-galactic-disk, commit 2528be62a70c1579308389621e75988f1f777c82.
+Upstream manuscript: doi.org/10.5281/zenodo.23003875.
+Gaia DR3: ESA Gaia Archive, gaiadr3.gaia_source; full ADQL query, raw public-source rows and checksums included. Gaia DR3
+overview: doi.org/10.1051/0004-6361/202243940.
+Bennett & Bovy: arxiv.org/abs/1809.03507; author repository morganb-phys/VWaves-GaiaDR2, commit
+203c2e111c24b99351871e562d4efe193fed586b.
+Finite-height model family: McMillan (2017), doi.org/10.1093/mnras/stw2759, and official AGAMA data/McMillan17.ini. The full
+McMillan model is not copied.

@@ -1,0 +1,2 @@
+Direct Gaia DR3 rows: ESA Gaia Archive, query and retrieval metadata preserved. Source IDs are public astronomical catalogue identifiers.
+Asym_bin.txt and bin_vel.txt: public numerical tables released by Morgan Bennett in morganb-phys/VWaves-GaiaDR2, commit 203c2e111c24b99351871e562d4efe193fed586b, supporting Bennett & Bovy, arxiv.org/abs/1809.03507. The tables represent different source selections from the direct DR3 sample. They are not combined into a single likelihood. Correlated errors are not supplied.

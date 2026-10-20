@@ -1,0 +1,47 @@
+{
+  "model": "v0.3 precision-controlled reflected axisymmetric equilibrium",
+  "reflection_error": 9.194264078149613e-17,
+  "max_abs_equilibrium_mean_vz_kms": 0.0,
+  "published_DR2": {
+    "author": "Bennett & Bovy",
+    "paper": "https://arxiv.org/abs/1809.03507",
+    "repository_commit": "203c2e111c24b99351871e562d4efe193fed586b",
+    "count_asymmetry_bins": 31,
+    "max_abs_count_asymmetry": 0.09921935294824812,
+    "count_asymmetry_zero_model_diagonal_chi2": 1692.2281805611335,
+    "velocity_bins": 50,
+    "fitted_global_velocity_offset_kms": 0.045307314311215444,
+    "velocity_offset_diagonal_error_kms": 0.01994223857497532,
+    "velocity_constant_model_diagonal_chi2": 436.9542079285077,
+    "covariance_supplied": false,
+    "formal_joint_likelihood": false,
+    "result": "Observed vertical perturbations are not reproduced by the symmetric equilibrium background; same limitation applies to any reflected equilibrium control."
+  },
+  "direct_DR3": {
+    "rows": 90113,
+    "rows_with_RV": 72603,
+    "RV_error_cut_kms": 3.0,
+    "RV_rows_after_cut": 48794,
+    "height_range_for_counts_kpc": [
+      0.15,
+      1.0
+    ],
+    "hemisphere_pair_bins": 17,
+    "counts_in_compared_bins": 79716,
+    "global_tracer_weights_per_Msun": [
+      0.013072628271916993,
+      2.1191453955524997e-08
+    ],
+    "normalization_parameters": 2,
+    "geometry_only_folded_count_poisson_deviance": 1747.2021268516487,
+    "max_abs_raw_count_asymmetry": 0.0714560122935075,
+    "RVS_global_offset_kms": -0.5287542872988447,
+    "RVS_constant_model_diagonal_chi2": 29.29756736626343,
+    "full_selection_corrected": false,
+    "population_mapping_verified": false,
+    "result": "Sample-level forward comparison only; full star-count validation gate remains open."
+  },
+  "no_per_bin_tuning": true,
+  "no_gravity_parameter_refit": true,
+  "full_star_count_and_velocity_validation_passed": false
+}
